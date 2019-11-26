@@ -15,7 +15,7 @@ var dbOptions = {
 	host: "localhost",
 	user: "root",
 	password: "",
-	database: "csi5510",
+	database: "csi4230",
 	port: 3306
 };
 
