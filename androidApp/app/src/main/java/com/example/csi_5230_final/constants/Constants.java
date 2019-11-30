@@ -1,0 +1,8 @@
+package com.example.csi_5230_final.constants;
+
+public class Constants {
+    public static final int INVALID_USERNAME = 10;
+    public static final int INVALID_PASSWORD = 11;
+    public static final int LOGIN_FAIL = 30;
+    public static final int GENERIC_FAIL = 31;
+}
