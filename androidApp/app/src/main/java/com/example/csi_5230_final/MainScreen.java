@@ -39,10 +39,37 @@ public class MainScreen extends AppCompatActivity {
         list.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                switch (position) {
+                    case 0:
+                        openTransactions();
+                        break;
+                    case 1:
+                        openBalances();
+                        break;
+                    case 2:
+                        openCashflow();
+                        break;
+                    case 3:
+                        openExpenses();
+                        break;
+                }
                 Toast toast = Toast.makeText(getApplicationContext(), options[position], Toast.LENGTH_SHORT);
                 toast.show();
             }
         });
+    }
+
+    private void openTransactions() {
+
+    }
+    private void openBalances() {
+
+    }
+    private void openCashflow() {
+
+    }
+    private void openExpenses() {
+
     }
 
 }
