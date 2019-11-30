@@ -2,6 +2,7 @@ package com.example.csi_5230_final;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.os.Handler;
 import android.os.Message;
@@ -26,7 +27,7 @@ import okhttp3.RequestBody;
 import okhttp3.Response;
 
 public class MainActivity extends AppCompatActivity {
-    String baseURL = "http://10.0.2.2:8080/";
+    String baseURL = Constants.baseURL;
     public static final MediaType JSON = MediaType.parse("application/json; charset=utf-8");
     Gson gson = new Gson();
 
@@ -141,6 +142,10 @@ public class MainActivity extends AppCompatActivity {
                 //check if successful
                 if (responseDTO.getSuccess()) {
                     authToken = responseDTO.getAuthtoken();
+                    //go to the main screen activity
+                    Intent intent = new Intent(MainActivity.this, MainScreen.class);
+                    intent.putExtra("authToken", authToken);
+                    startActivity(intent);
                 }
                 else {
                     toastHandler.sendEmptyMessage(Constants.LOGIN_FAIL);
