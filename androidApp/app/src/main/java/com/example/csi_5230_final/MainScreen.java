@@ -1,16 +1,20 @@
 package com.example.csi_5230_final;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-import android.view.LayoutInflater;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.csi_5230_final.customAdapters.MainViewAdapter;
+import com.example.csi_5230_final.views.Balances;
+import com.example.csi_5230_final.views.Cashflow;
+import com.example.csi_5230_final.views.Expenses;
+import com.example.csi_5230_final.views.Transactions;
 
 public class MainScreen extends AppCompatActivity {
 
@@ -60,16 +64,21 @@ public class MainScreen extends AppCompatActivity {
     }
 
     private void openTransactions() {
-
+        Intent intent = new Intent(MainScreen.this, Transactions.class);
+        startActivity(intent);
     }
     private void openBalances() {
-
+        Intent intent = new Intent(MainScreen.this, Balances.class);
+        startActivity(intent);
     }
     private void openCashflow() {
-
+        Intent intent = new Intent(MainScreen.this, Cashflow.class);
+        intent.putExtra("authToken", authToken);
+        startActivity(intent);
     }
     private void openExpenses() {
-
+        Intent intent = new Intent(MainScreen.this, Expenses.class);
+        startActivity(intent);
     }
 
 }

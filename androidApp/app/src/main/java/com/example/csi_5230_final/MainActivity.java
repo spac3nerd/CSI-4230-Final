@@ -131,7 +131,7 @@ public class MainActivity extends AppCompatActivity {
         http.newCall(loginRequest).enqueue(new Callback() {
             @Override
             public void onFailure(Call call, IOException e) {
-                somethingWentWrongMessage();
+                toastHandler.sendEmptyMessage(Constants.GENERIC_FAIL);
             }
 
             @Override

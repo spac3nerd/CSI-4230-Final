@@ -11,8 +11,8 @@ const userAuth = require("../authentication/userAuth.js");
  * request to continue to be served by the next router.
  */
 router.use(function(req, res, next) {
-	if (req.headers.authtoken) {
-		if (userAuth.checkSession(req.headers.authtoken)) {
+	if (req.body.authToken) {
+		if (userAuth.checkSession(req.body.authToken)) {
 			next();
 		}
 		else {

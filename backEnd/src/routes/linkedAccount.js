@@ -8,7 +8,7 @@ const userAuth = require("../authentication/userAuth.js");
  * for the given Linked-Account from a PLAID Link session
  */
 router.post("/linkedAccounts/add", function(req, res) {
-    const email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    const email = userAuth.getUserEmailByToken(req.body.authToken);
     const new_key = req.body.new_key;
     linkedAccountsModel.addAccountAndUpdate(email,new_key, (result) => {
         res.writeHead(200, {"Content-Type": "text/plain"});

@@ -7,7 +7,7 @@ const transactionModel = require('../model/transactions');
  * Implements the /transactions/getall endpoint which returns all the transactions for the current user
  */
 router.get("/transactions/getall", async function(req, res){
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     const txs = await transactionModel.getCachedTransactionsFromEmail(email);
     if(txs){
         res.writeHead(200, {"Content-Type": "text/plain"});
@@ -23,7 +23,7 @@ router.get("/transactions/getall", async function(req, res){
  * description and primary/secondary categories. The transaction object must a body parameter.
  */
 router.post('/transactions/edit', async function(req, res){
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     console.log("Got edited transaction: " + JSON.stringify(req.body.transaction));
     const result = await transactionModel.editTransaction(req.body.transaction);
     if(result.success){
@@ -41,7 +41,7 @@ router.post('/transactions/edit', async function(req, res){
  */
 router.post('/transactions/delete', async function(req, res){
     console.log("Got deleteing transaction: " + JSON.stringify(req.body.transaction));
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     const result = await transactionModel.deleteTransaction(req.body.transaction);
     if(result.success){
         res.writeHead(200, {"Content-Type": "text/plain"});
@@ -58,7 +58,7 @@ router.post('/transactions/delete', async function(req, res){
  */
 router.post('/transactions/add', async function(req, res){
     console.log("Add transaction: " + JSON.stringify(req.body.transaction));
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     const result = await transactionModel.addTransaction(email, req.body.transaction);
     if(result.success){
         res.writeHead(200, {"Content-Type": "text/plain"});

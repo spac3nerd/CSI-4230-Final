@@ -8,7 +8,7 @@ const userAuth = require("../authentication/userAuth");
  * spending data.
  */
 router.get("/spending/months", async function(req, res) {
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     let result = await  spendingModel.getValidMonths(email);
 
     res.writeHead(200, {"Content-Type": "text/plain"});
@@ -26,7 +26,7 @@ router.get("/spending/months", async function(req, res) {
  * absent, all-time data is returned.
  */
 router.get("/spending/bycategory", async function(req, res) {
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
 
     let result = null;
     if(req.headers.month){
@@ -50,7 +50,7 @@ router.get("/spending/bycategory", async function(req, res) {
  * absent, all-time data is returned.
  */
 router.get("/income/bycategory", async function(req, res) {
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     let result = null;
     if(req.headers.month){
         result = await  spendingModel.incomeByCategoryForUserForMonth(email, req.headers.month);
@@ -69,8 +69,8 @@ router.get("/income/bycategory", async function(req, res) {
  * Implements the /cashflow/all endpoint which returns a object containing income and expense totals for every
  * month for which the user has data.
  */
-router.get("/cashflow/all", async function(req, res) {
-    let email = userAuth.getUserEmailByToken(req.headers.authtoken);
+router.post("/cashflow/all", async function(req, res) {
+    let email = userAuth.getUserEmailByToken(req.body.authToken);
     let response = await  spendingModel.cashFlowForUser(email);
     res.writeHead(200, {"Content-Type": "text/plain"});
     if(response.success){

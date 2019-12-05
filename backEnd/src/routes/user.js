@@ -40,8 +40,8 @@ router.post("/user/login", function(req, res) {
  * necessarily logging in or out. Returns an object with the success status of the verification.
  */
 router.post("/user/verifyToken", function(req, res) {
-	if (req.headers.authtoken) {
-		if (userAuth.checkSession(req.headers.authtoken)) {
+	if (req.body.authToken) {
+		if (userAuth.checkSession(req.body.authToken)) {
             let result = {
 				success: true
 			};
