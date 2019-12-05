@@ -2,7 +2,7 @@ package com.example.csi_5230_final.DTO.cashflow;
 
 public class CashflowItemDTO {
     private String month;
-    private double value;
+    private float value;
 
     public String getMonth() {
         return month;
@@ -12,11 +12,12 @@ public class CashflowItemDTO {
         this.month = month;
     }
 
-    public double getValue() {
+    public float getValue() {
         return value;
     }
 
     public void setValue(long value) {
         this.value = value;
     }
+
 }
