@@ -114,10 +114,12 @@ async function getAllUserAccounts(email) {
         let accountsResponse = await dbInstance.queryAsync(QUERY);
         if(!accountsResponse.err){
             return {success: true, accounts: accountsResponse.rows};
-        } else {
+        }
+        else {
             return {success: false, message: accountsResponse.err};
         }
-    } else {
+    }
+    else {
         return response;
     }
 }
@@ -130,7 +132,7 @@ async function getAllUserAccounts(email) {
  */
 async function getBalancesByEmail(email){
     const response = await userModel.getUserIDfromEmailAsync(email);
-    if(response.success){
+    if (response.success){
         const QUERY = `SELECT account_details.account_id, account_details.name, account_balances.date, account_details.type,\
         account_balances.available, account_balances.current, account_balances.credit_limit FROM account_balances \
         INNER JOIN account_details on account_details.account_id=account_balances.account_id \ 
@@ -154,11 +156,25 @@ async function getBalancesByEmail(email){
                 account.history[row.date] = row.current;
             });
 
+            //we must change the history object to an array
+            for (let k = 0; k < balanceData.length; k++) {
+                let newHistoryData = [];
+                for (let n in balanceData[k].history) {
+                    newHistoryData.push({
+                        date: n,
+                        value: balanceData[k].history[n]
+                    });
+                }
+                balanceData[k].history = newHistoryData;
+            }
+
             return {success: true, balances: balanceData};
-        } else {
+        }
+        else {
             return {success: false, message: balancesResponse.err};
         }
-    } else {
+    }
+    else {
         return response;
     }
 }

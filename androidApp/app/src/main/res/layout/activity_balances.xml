@@ -6,8 +6,8 @@
     android:layout_height="match_parent"
     tools:context=".views.Balances">
 
-    <com.github.mikephil.charting.charts.CombinedChart
-        android:id="@+id/chart1"
+    <com.github.mikephil.charting.charts.LineChart
+        android:id="@+id/balanceLineChart"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
 

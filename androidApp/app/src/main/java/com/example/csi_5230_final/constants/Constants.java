@@ -15,6 +15,8 @@ public class Constants {
     public static final int EXPENSE_DATA = 70;
     public static final int SPENDING_MONTHS = 71;
 
+    //Balances
+    public static final int BALANCE_DATA = 80;
 
     //Data packet constants
     public static final String AUTH_TOKEN_HEADER = "authToken";

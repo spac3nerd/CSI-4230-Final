@@ -22,13 +22,13 @@ router.get("/accounts/getall", async function(req, res) {
  * Implements the /accounts/balancehistory endpoint which returns a list balance history objects for each account
  * owned by the user.
  */
-router.get("/accounts/balancehistory", async function(req, res) {
+router.post("/accounts/balancehistory", async function(req, res) {
     let email = userAuth.getUserEmailByToken(req.body.authToken);
-    let response = await  accountsModel.getBalancesByEmail(email);
+    let response = await accountsModel.getBalancesByEmail(email);
 
     res.writeHead(200, {"Content-Type": "text/plain"});
     if(response.success){
-        res.end(JSON.stringify(response.balances), "utf-8");
+        res.end(JSON.stringify({accounts: response.balances}), "utf-8");
     } else {
         res.end(JSON.stringify(response));
     }

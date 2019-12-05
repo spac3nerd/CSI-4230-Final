@@ -297,7 +297,7 @@ public class Expenses extends AppCompatActivity {
                     primaryExpenseResults.getSpending().get(k).getCategory_primary()));
         }
 
-        PieDataSet dataSet = new PieDataSet(entries, "Election Results");
+        PieDataSet dataSet = new PieDataSet(entries, "");
 
         dataSet.setSliceSpace(3f);
         dataSet.setIconsOffset(new MPPointF(0, 40));
