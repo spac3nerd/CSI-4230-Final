@@ -7,13 +7,14 @@ const userAuth = require("../authentication/userAuth");
  * Implements the /spending/months endpoint which gets the valid months for which the current user has
  * spending data.
  */
-router.get("/spending/months", async function(req, res) {
+router.post("/spending/months", async function(req, res) {
     let email = userAuth.getUserEmailByToken(req.body.authToken);
     let result = await  spendingModel.getValidMonths(email);
 
     res.writeHead(200, {"Content-Type": "text/plain"});
     if(result.success){
-        res.end(JSON.stringify(result.data), "utf-8");
+        res.end(JSON.stringify({
+            spendingMonths: result.data}), "utf-8");
     } else {
         res.end(JSON.stringify(result));
     }
@@ -25,7 +26,7 @@ router.get("/spending/months", async function(req, res) {
  * parameterized with a 'month' header which can filter the returned data to a given month. If the month header is
  * absent, all-time data is returned.
  */
-router.get("/spending/bycategory", async function(req, res) {
+router.post("/spending/bycategory", async function(req, res) {
     let email = userAuth.getUserEmailByToken(req.body.authToken);
 
     let result = null;

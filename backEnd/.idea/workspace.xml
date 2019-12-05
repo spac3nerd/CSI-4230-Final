@@ -4,15 +4,9 @@
     <list default="true" id="0676c024-fabf-401b-ad59-84d05ed2759e" name="Default Changelist" comment="">
       <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../androidApp/app/src/main/AndroidManifest.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/MainScreen.java" beforeDir="false" afterPath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/MainScreen.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/views/Balances.java" beforeDir="false" afterPath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/views/Balances.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/views/Cashflow.java" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/res/layout/activity_cashflow.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/accounts.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/accounts.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/authMiddleware.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/authMiddleware.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/linkedAccount.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/linkedAccount.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/constants/Constants.java" beforeDir="false" afterPath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/constants/Constants.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../androidApp/app/src/main/java/com/example/csi_5230_final/views/Expenses.java" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/src/routes/spending.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/spending.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/transactions.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/transactions.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/routes/user.js" beforeDir="false" afterPath="$PROJECT_DIR$/src/routes/user.js" afterDir="false" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
     <ignored path="$PROJECT_DIR$/temp/" />
@@ -75,7 +69,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/routes/authMiddleware.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="166">
+            <state relative-caret-position="153">
               <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
             </state>
           </provider>
@@ -84,8 +78,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/routes/spending.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+            <state relative-caret-position="300">
+              <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
             </state>
           </provider>
         </entry>
@@ -212,12 +206,12 @@
       <option name="presentableId" value="Default" />
       <updated>1574810950040</updated>
       <workItem from="1574810951343" duration="136000" />
-      <workItem from="1575133018062" duration="9488000" />
+      <workItem from="1575133018062" duration="11018000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9624000" />
+    <option name="totallyTimeSpent" value="11154000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="1920" y="0" width="1920" height="1044" extended-state="6" />
@@ -259,12 +253,6 @@
           <line>13</line>
           <properties lambdaOrdinal="-1" />
           <option name="timeStamp" value="10" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/src/routes/spending.js</url>
-          <line>72</line>
-          <properties lambdaOrdinal="-1" />
-          <option name="timeStamp" value="17" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -368,15 +356,15 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/authMiddleware.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="166">
+        <state relative-caret-position="153">
           <caret line="13" column="9" selection-start-line="13" selection-start-column="9" selection-end-line="13" selection-end-column="9" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/routes/spending.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="62" column="12" lean-forward="true" selection-start-line="62" selection-start-column="12" selection-end-line="62" selection-end-column="12" />
+        <state relative-caret-position="300">
+          <caret line="26" column="10" lean-forward="true" selection-start-line="26" selection-start-column="10" selection-end-line="26" selection-end-column="10" />
         </state>
       </provider>
     </entry>

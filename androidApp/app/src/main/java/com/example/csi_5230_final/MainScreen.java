@@ -79,6 +79,7 @@ public class MainScreen extends AppCompatActivity {
     }
     private void openExpenses() {
         Intent intent = new Intent(MainScreen.this, Expenses.class);
+        intent.putExtra("authToken", authToken);
         startActivity(intent);
     }
 
