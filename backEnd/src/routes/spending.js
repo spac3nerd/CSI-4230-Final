@@ -30,15 +30,15 @@ router.post("/spending/bycategory", async function(req, res) {
     let email = userAuth.getUserEmailByToken(req.body.authToken);
 
     let result = null;
-    if(req.headers.month){
-        result = await  spendingModel.spendingByCategoryForUserForMonth(email, req.headers.month);
+    if(req.body.month){
+        result = await  spendingModel.spendingByCategoryForUserForMonth(email, req.body.month);
     } else {
         result = await  spendingModel.spendingByCategoryForUser(email);
     }
 
     res.writeHead(200, {"Content-Type": "text/plain"});
     if(result.success){
-        res.end(JSON.stringify(result.data), "utf-8");
+        res.end(JSON.stringify({spending: result.data}), "utf-8");
     } else {
         res.end(JSON.stringify(result));
     }
