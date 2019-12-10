@@ -65,6 +65,7 @@ public class MainScreen extends AppCompatActivity {
 
     private void openTransactions() {
         Intent intent = new Intent(MainScreen.this, Transactions.class);
+        intent.putExtra("authToken", authToken);
         startActivity(intent);
     }
     private void openBalances() {

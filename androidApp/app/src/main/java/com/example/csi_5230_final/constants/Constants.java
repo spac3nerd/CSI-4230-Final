@@ -8,6 +8,9 @@ public class Constants {
     public static final int LOGIN_FAIL = 30;
     public static final int GENERIC_FAIL = 31;
 
+    //Transactions
+    public static final int TRANSACTION_DATA = 50;
+
     //Cashflow
     public static final int CASHFLOW_DATA = 60;
 
@@ -20,4 +23,13 @@ public class Constants {
 
     //Data packet constants
     public static final String AUTH_TOKEN_HEADER = "authToken";
+
+
+    //Transaction table headers
+    public static final String HEADER_DATE = "Date";
+    public static final String HEADER_ACCOUNT = "Account";
+    public static final String HEADER_NAME = "Name";
+    public static final String HEADER_CAT = "Category";
+    public static final String HEADER_SUB_CAT = "Sub Category";
+    public static final String HEADER_AMOUNT = "Amount";
 }

@@ -6,15 +6,17 @@ const transactionModel = require('../model/transactions');
 /**
  * Implements the /transactions/getall endpoint which returns all the transactions for the current user
  */
-router.get("/transactions/getall", async function(req, res){
+router.post("/transactions/getall", async function(req, res){
     let email = userAuth.getUserEmailByToken(req.body.authToken);
     const txs = await transactionModel.getCachedTransactionsFromEmail(email);
     if(txs){
         res.writeHead(200, {"Content-Type": "text/plain"});
-        res.end(JSON.stringify(txs), "utf-8");
+        res.end(JSON.stringify({
+            transactions: txs
+        }), "utf-8");
     } else {
         res.writeHead(200, {"Content-Type": "text/plain"});
-        res.end(JSON.stringify({success:false}), "utf-8");
+        res.end(JSON.stringify({success:false}), "getallutf-8");
     }
 });
 
