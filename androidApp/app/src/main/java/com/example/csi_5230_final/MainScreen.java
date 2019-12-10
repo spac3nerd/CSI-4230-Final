@@ -19,8 +19,8 @@ import com.example.csi_5230_final.views.Transactions;
 public class MainScreen extends AppCompatActivity {
 
     String authToken;
-    String[] options = {"Transactions", "Balances", "Cash Flow", "Expenses"};
-    int [] optionImg = {R.drawable.table, R.drawable.balance, R.drawable.line, R.drawable.pie};
+    String[] options = {"Transactions", "Add Transactions", "Balances", "Cash Flow", "Expenses"};
+    int [] optionImg = {R.drawable.table, R.drawable.plus, R.drawable.balance, R.drawable.line, R.drawable.pie};
 
     MainViewAdapter mainAdapter;
     ListView list;
@@ -48,22 +48,28 @@ public class MainScreen extends AppCompatActivity {
                         openTransactions();
                         break;
                     case 1:
-                        openBalances();
+                        openAddTransactions();
                         break;
                     case 2:
-                        openCashflow();
+                        openBalances();
                         break;
                     case 3:
+                        openCashflow();
+                        break;
+                    case 4:
                         openExpenses();
                         break;
                 }
-                Toast toast = Toast.makeText(getApplicationContext(), options[position], Toast.LENGTH_SHORT);
-                toast.show();
             }
         });
     }
 
     private void openTransactions() {
+        Intent intent = new Intent(MainScreen.this, Transactions.class);
+        intent.putExtra("authToken", authToken);
+        startActivity(intent);
+    }
+    private void openAddTransactions() {
         Intent intent = new Intent(MainScreen.this, Transactions.class);
         intent.putExtra("authToken", authToken);
         startActivity(intent);

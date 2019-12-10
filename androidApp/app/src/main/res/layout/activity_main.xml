@@ -29,7 +29,7 @@
         android:layout_height="wrap_content"
         android:text="Login"
         android:layout_marginTop="10dp"
-        android:background="@android:color/holo_blue_light"
+        android:background="@color/colorPrimary"
         android:layout_gravity="center"/>
 
 
