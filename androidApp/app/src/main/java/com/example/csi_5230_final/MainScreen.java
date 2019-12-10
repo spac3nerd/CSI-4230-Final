@@ -11,6 +11,7 @@ import android.widget.ListView;
 import android.widget.Toast;
 
 import com.example.csi_5230_final.customAdapters.MainViewAdapter;
+import com.example.csi_5230_final.views.AddTransactions;
 import com.example.csi_5230_final.views.Balances;
 import com.example.csi_5230_final.views.Cashflow;
 import com.example.csi_5230_final.views.Expenses;
@@ -70,7 +71,7 @@ public class MainScreen extends AppCompatActivity {
         startActivity(intent);
     }
     private void openAddTransactions() {
-        Intent intent = new Intent(MainScreen.this, Transactions.class);
+        Intent intent = new Intent(MainScreen.this, AddTransactions.class);
         intent.putExtra("authToken", authToken);
         startActivity(intent);
     }

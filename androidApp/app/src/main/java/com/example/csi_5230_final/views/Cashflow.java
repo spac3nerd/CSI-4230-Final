@@ -144,7 +144,7 @@ public class Cashflow extends AppCompatActivity {
         xAxis.setValueFormatter(new ValueFormatter() {
             @Override
             public String getFormattedValue(float value) {
-                return cashflowResponse.getIncome().get((int) value).getMonth();
+                return cashflowResponse.getExpense().get((int) value).getMonth();
             }
         });
 
@@ -164,9 +164,19 @@ public class Cashflow extends AppCompatActivity {
         ArrayList<BarEntry> incomeEntries = new ArrayList<>();
         ArrayList<BarEntry> expenseEntries = new ArrayList<>();
 
-        for (int k = 0; k < cashflowResponse.getIncome().size(); k++) {
-            incomeEntries.add(new BarEntry(0, cashflowResponse.getIncome().get(k).getValue()));
-            expenseEntries.add(new BarEntry(0, cashflowResponse.getExpense().get(k).getValue()));
+        for (int k = 0; k < cashflowResponse.getExpense().size(); k++) {
+            try {
+                incomeEntries.add(new BarEntry(0, cashflowResponse.getIncome().get(k).getValue()));
+            } catch (Exception e) {
+                incomeEntries.add(new BarEntry(0, 0));
+            }
+
+            try {
+                expenseEntries.add(new BarEntry(0, cashflowResponse.getExpense().get(k).getValue()));
+            } catch (Exception e) {
+                expenseEntries.add(new BarEntry(0, 0));
+            }
+
         }
 
         BarDataSet incomeSet = new BarDataSet(incomeEntries, "Income");

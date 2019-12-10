@@ -8,6 +8,10 @@ public class Constants {
     public static final int LOGIN_FAIL = 30;
     public static final int GENERIC_FAIL = 31;
 
+    //Add Transactions
+    public static final int CATEGORIES_DATA = 40;
+    public static final int TRANSACTION_ITEM_ADDED = 45;
+
     //Transactions
     public static final int TRANSACTION_DATA = 50;
 

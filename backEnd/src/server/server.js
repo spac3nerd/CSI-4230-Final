@@ -14,6 +14,7 @@ function webServer(settings) {
     const transactionRoutes = require('../routes/transactions');
     const accounttsRoutes = require('../routes/accounts');
     const spendingRoutes = require('../routes/spending');
+    const categoryROutes = require('../routes/categories')
 
     const app = express();
 
@@ -39,7 +40,8 @@ function webServer(settings) {
 	app.use(transactionRoutes);
 	app.use(accounttsRoutes);
 	app.use(spendingRoutes);
-	
+	app.use(categoryROutes);
+
 	// Start the server
     const httpServer = http.createServer(app).listen(settings.httpPort);
 	console.log("HTTP Server listening on port " + settings.httpPort);

@@ -42,7 +42,7 @@ public final class TransactionTableComparators {
 
         @Override
         public int compare(final TransactionItemDTO item1, final TransactionItemDTO item2) {
-            DateFormat formatter = new SimpleDateFormat("yyyy-dd-MM", Locale.ENGLISH);
+            DateFormat formatter = new SimpleDateFormat("yyyy-MM-dd", Locale.ENGLISH);
 
             Date date1;
             Date date2;
@@ -52,7 +52,14 @@ public final class TransactionTableComparators {
                 date1 = formatter.parse(dateText1);
                 date2 = formatter.parse(dateText2);
 
-                return date1.compareTo(date2);
+                if (date1.after(date2)) {
+                    return -1;
+                }
+                if (date2.after(date1)) {
+                    return 1;
+                }
+
+                return 0;
             } catch (ParseException e) {
                 e.printStackTrace();
             }

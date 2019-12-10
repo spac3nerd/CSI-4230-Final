@@ -55,7 +55,7 @@ public class TransactionItemDTO {
     }
 
     public void setDate(String date) {
-        date = date;
+        this.date = date;
     }
 
     public String getName() {

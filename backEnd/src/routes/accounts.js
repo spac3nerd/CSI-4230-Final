@@ -6,7 +6,7 @@ const userAuth = require("../authentication/userAuth");
 /**
  * Implements the /accounts/getall endpoint which returns a list of all account details owned by the user
  */
-router.get("/accounts/getall", async function(req, res) {
+router.post("/accounts/getall", async function(req, res) {
     let email = userAuth.getUserEmailByToken(req.body.authToken);
     let response = await  accountsModel.getAllUserAccounts(email);
 
