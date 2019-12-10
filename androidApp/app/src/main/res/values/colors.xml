@@ -26,4 +26,10 @@
     <color name="table_income">#FF2E7D32</color>
     <color name="table_loss">#FFC62828</color>
 
+
+    <color name="selection_background">#e4e4e4</color>
+
+
+
+
 </resources>

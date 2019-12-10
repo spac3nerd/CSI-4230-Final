@@ -72,7 +72,8 @@ public class TransactionTableAdapter extends LongPressAwareTableDataAdapter<Tran
 
     private View renderDate(final TransactionItemDTO itemDTO) {
         final TextView textView = new TextView(getContext());
-        textView.setText(itemDTO.getDate());
+        String dateText = itemDTO.getDate().split("T")[0];
+        textView.setText(dateText);
         textView.setPadding(20, 10, 20, 10);
         textView.setTextSize(TEXT_SIZE);
         textView.setSingleLine();

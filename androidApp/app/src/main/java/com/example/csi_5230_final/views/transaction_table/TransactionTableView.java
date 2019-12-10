@@ -8,6 +8,7 @@ import com.example.csi_5230_final.DTO.transaction.TransactionDTO;
 import com.example.csi_5230_final.DTO.transaction.TransactionItemDTO;
 import com.example.csi_5230_final.R;
 import com.example.csi_5230_final.constants.Constants;
+import com.example.csi_5230_final.views.transaction_table.comparators.TransactionTableComparators;
 
 import de.codecrafters.tableview.SortableTableView;
 import de.codecrafters.tableview.model.TableColumnWeightModel;
@@ -48,9 +49,7 @@ public class TransactionTableView extends SortableTableView<TransactionItemDTO>{
 
         setColumnModel(tableColumnWeightModel);
 
-//        setColumnComparator(0, CarComparators.getCarProducerComparator());
-//        setColumnComparator(1, CarComparators.getCarNameComparator());
-//        setColumnComparator(2, CarComparators.getCarPowerComparator());
-//        setColumnComparator(3, CarComparators.getCarPriceComparator());
+        setColumnComparator(5, TransactionTableComparators.getAmountComparator());
+        setColumnComparator(0, TransactionTableComparators.getDateComparator());
     }
 }
