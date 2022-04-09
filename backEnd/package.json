@@ -13,7 +13,7 @@
 	"dependencies": {
 		"async": "^3.1.0",
 		"cors": "^2.8.5",
-		"moment": "^2.24.0",
+		"moment": "^2.29.2",
 		"plaid": "^4.3.0"
 	}
 }
